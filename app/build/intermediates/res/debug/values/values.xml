@@ -12,6 +12,11 @@
     <color name="common_signin_btn_light_text_disabled">#FFAAAAAA</color>
     <color name="common_signin_btn_light_text_focused">#FF737373</color>
     <color name="common_signin_btn_light_text_pressed">@android:color/white</color>
+    <!-- From: file:/home/adam/AndroidstudioProjects/Waldo/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="frame">#b4b4b4</color>
+    <color name="frame_background">#bcbcbc</color>
+    <color name="frame_solid">#eee</color>
     <!-- From: file:/home/adam/AndroidstudioProjects/Waldo/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/wallet_colors.xml -->
     <eat-comment/>
     <color name="wallet_bright_foreground_disabled_holo_light">#ffb2b2b2</color>
@@ -86,19 +91,23 @@
     <eat-comment/>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="no">Nah</string>
     <!-- From: file:/home/adam/AndroidstudioProjects/Waldo/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="store_picture_message">"Allow Ad to store image in Picture gallery?"</string>
     <string name="store_picture_title">Save image</string>
     <!-- From: file:/home/adam/AndroidstudioProjects/Waldo/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="title_section1">Login</string>
-    <string name="title_section2">Map</string>
+    <string name="title_section1">Me</string>
+    <string name="title_section2">Contacts</string>
     <string name="title_section3">Other</string>
     <string name="title_section4">Other</string>
     <!-- From: file:/home/adam/AndroidstudioProjects/Waldo/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/wallet_strings.xml -->
     <eat-comment/>
     <string name="wallet_buy_button_place_holder" translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">Buy with Google</string>
+    <!-- From: file:/home/adam/AndroidstudioProjects/Waldo/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="yes">Yes</string>
     <!-- From: file:/home/adam/AndroidstudioProjects/Waldo/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">

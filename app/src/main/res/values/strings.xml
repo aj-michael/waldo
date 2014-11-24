@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">Waldo</string>
+    <string name="yes">Yes</string>
+    <string name="no">Nah</string>
     <string name="title_section1">Me</string>
     <string name="title_section2">Contacts</string>
     <string name="title_section3">Other</string>

@@ -8,6 +8,7 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -53,6 +54,8 @@ public class MainActivity extends Activity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         Firebase.setAndroidContext(this);
         ref = new Firebase("https://wheremyboysat.firebaseio.com");
         registerBTN = (Button) findViewById(R.id.button1);
@@ -81,6 +84,13 @@ public class MainActivity extends Activity implements
                         .replace(R.id.container,
                                 UserMapFragment.newInstance(position)).commit();
                 break;
+            case 1:
+                fragmentManager
+                        .beginTransaction()
+                        .replace(R.id.container,
+                                new UserListViewFragment()).commit();
+                break;
+
             default:
                 fragmentManager
                         .beginTransaction()
