@@ -77,12 +77,6 @@ public class MainActivity extends Activity implements
         switch (position) {
             case 0:
                 fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.container,
-                            LoginFragment.newInstance()).commit();
-                break;
-            case 1:
-                fragmentManager
                         .beginTransaction()
                         .replace(R.id.container,
                                 UserMapFragment.newInstance(position)).commit();
@@ -136,72 +130,14 @@ public class MainActivity extends Activity implements
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
-    public void register(View view) {
-        System.out.println("Hello");
-        emailET = (EditText) findViewById(R.id.editText2);
-        passwordET = (EditText) findViewById(R.id.editText1);
-        final String email = emailET.getText().toString();
-        final String password = passwordET.getText().toString();
-        Toast.makeText(getApplicationContext(),"Logging in...", Toast.LENGTH_LONG).show();
-
-        ref.child("taken_emails").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                boolean flag = false;
-                for (DataSnapshot childSnap : dataSnapshot.getChildren()) {
-                    String taken_email = (String) childSnap.getValue();
-                    if (taken_email.equals(email)) {
-                        flag = true;
-                    }
-                }
-                if (!flag) {
-                    // user was not found, register a new one
-                    ref.createUser(email, password, new Firebase.ResultHandler() {
-                        @Override
-                        public void onSuccess() {
-                            System.out.println("User successfully created");
-                            ref.child("taken_emails").push().setValue(email);
-                        }
-                        @Override
-                        public void onError(FirebaseError firebaseError) {
-                            System.out.println("This error");
-                            System.out.println(firebaseError.toString());
-                        }
-                    });
-                }
-                ref.authWithPassword(email,password,new Firebase.AuthResultHandler() {
-                    @Override
-                    public void onAuthenticated(AuthData authData) {
-                        System.out.println("User ID: " + authData.getUid() + ", Provider: " + authData.getProvider());
-                        ref.child("users").child(authData.getUid()).child("email").setValue(email);
-                        onNavigationDrawerItemSelected(1);
-                    }
-                    @Override
-                    public void onAuthenticationError(FirebaseError firebaseError) {
-                        System.out.println("All the way to this error");
-                        System.out.println(firebaseError.toString());
-                    }
-                });
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-                System.out.println("No this error");
-                System.out.println(firebaseError.toString());
-            }
-        });
-
-
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 	/**
